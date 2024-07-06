@@ -12,13 +12,18 @@ import org.springframework.stereotype.Service;
 @Transactional
 
 public class UserService {
+
+    // Injects the UserRepo bean to interact with the database
     @Autowired
     private UserRepo userRepo;
 
+    // Injects the ModelMapper bean to map between UserDTO and User entities
     @Autowired
     private ModelMapper modelMapper;
+
     public UserDTO saveUser(UserDTO userDTO){
 
+        // Maps UserDTO to User entity and saves it using the userRepo(userDTO object saves in the database through the repository as User Entity class)
         userRepo.save(modelMapper.map(userDTO, User.class));
         return  userDTO;
     }
