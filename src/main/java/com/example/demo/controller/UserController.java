@@ -5,6 +5,8 @@ import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 // Base URL for all endpoints in this controller
 @RequestMapping(value = "api/v1/user")
@@ -15,9 +17,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/getUser")
-    public String getUser(){
-        return "Dinithi";
+    @GetMapping("/getUsers")
+    public List<UserDTO> getUsers(){
+        return userService.getAllUsers();
     }
 
     // Handles HTTP POST requests to /api/v1/user/saveUser
