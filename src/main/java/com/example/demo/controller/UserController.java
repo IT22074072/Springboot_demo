@@ -41,8 +41,11 @@ public class UserController {
         return userService.updateUser(userDTO);
     }
 
+    // Maps HTTP DELETE requests to /deleteUser to this method
     @DeleteMapping("/deleteUser")
     public boolean deleteUser(@RequestBody UserDTO userDTO){
+
+        // Calls the deleteUser method of the userService with the given UserDTO
         return userService.deleteUser(userDTO);
     }
 
