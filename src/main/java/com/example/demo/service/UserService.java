@@ -32,7 +32,11 @@ public class UserService {
     }
 
     public List<UserDTO> getAllUsers(){
+
+        // Retrieve all User entities from the user repository
         List<User> userList = userRepo.findAll();
+
+        // Map the list of User entities to a list of UserDTO objects using ModelMapper
         return modelMapper.map(userList,new TypeToken<List<UserDTO>>(){}.getType());
     }
 

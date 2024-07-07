@@ -17,7 +17,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    // Handles HTTP GET requests to the "/getUsers" endpoint
     @GetMapping("/getUsers")
+
+    // Returns a list of UserDTO objects by invoking the userService's getAllUsers method
     public List<UserDTO> getUsers(){
         return userService.getAllUsers();
     }
