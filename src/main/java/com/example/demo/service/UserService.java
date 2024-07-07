@@ -41,7 +41,11 @@ public class UserService {
     }
 
     public UserDTO updateUser(UserDTO userDTO){
+
+        // Save the User entity to the repository after mapping from the UserDTO
         userRepo.save(modelMapper.map(userDTO, User.class));
+
+        // Return the same UserDTO object that was passed in
         return userDTO;
     }
 

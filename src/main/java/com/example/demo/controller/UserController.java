@@ -33,8 +33,11 @@ public class UserController {
         return userService.saveUser(userDTO);
     }
 
+
+    // Maps HTTP PUT requests to /updateUser to this method
     @PutMapping("/updateUser")
     public UserDTO updateUser(@RequestBody UserDTO userDTO){
+        // Calls the updateUser method of the userService with the given UserDTO
         return userService.updateUser(userDTO);
     }
 
