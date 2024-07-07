@@ -51,7 +51,11 @@ public class UserService {
 
 
     public boolean deleteUser(UserDTO userDTO){
+
+        // Delete the User entity from the repository after mapping from the UserDTO
         userRepo.delete(modelMapper.map(userDTO, User.class));
+
+        // Return true indicating that the delete operation was successful
         return true;
     }
 
